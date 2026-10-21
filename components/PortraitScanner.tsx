@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export default function PortraitScanner() {
+  const basePath = process.env.NODE_ENV === "production" ? "/franco-sosa-porfolio" : "";
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [coords, setCoords] = useState<{ x: number; y: number } | null>(null);
@@ -107,7 +108,7 @@ export default function PortraitScanner() {
       className="relative aspect-[4/5] w-full border border-border bg-[#050608] overflow-hidden group cursor-crosshair select-none"
     >
       <Image
-        src="/franco-sosa-portrait-bw.png"
+        src={`${basePath}/franco-sosa-portrait-bw.png`}
         alt="Franco Sosa — Desarrollador Full Stack"
         fill
         priority
