@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1118"/>
+      <stop offset="100%" stop-color="#07080B"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#3D7BFF" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  
+  <!-- Base tile -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+  
+  <!-- Subtle grid lines inside icon -->
+  <line x1="32" y1="6" x2="32" y2="58" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="6" y1="32" x2="58" y2="32" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  
+  <!-- Letter F - Technical Monospace / Editorial -->
+  <!-- Stem -->
+  <rect x="17" y="16" width="7" height="32" rx="1" fill="#FFFFFF"/>
+  <!-- Top Arm -->
+  <rect x="17" y="16" width="29" height="7" rx="1" fill="#FFFFFF"/>
+  <!-- Middle Arm -->
+  <rect x="17" y="29" width="20" height="6.5" rx="1" fill="#FFFFFF"/>
+  
+  <!-- FRESS Technical Blue Accent Terminal Block -->
+  <rect x="39" y="40" width="8" height="8" rx="2" fill="#3D7BFF" filter="url(#glow)"/>
+</svg>

@@ -14,7 +14,16 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const basePath = process.env.NODE_ENV === "production" ? "/franco-sosa-porfolio" : "";
+
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: `${basePath}/favicon.svg`, type: "image/svg+xml" },
+      { url: `${basePath}/favicon.ico`, sizes: "any" },
+    ],
+    apple: `${basePath}/apple-touch-icon.png`,
+  },
   title: "FRESS — Franco Sosa | Desarrollador Full Stack & Sistemas Web",
   description:
     "Portafolio técnico de Franco Sosa (FRESS). Desarrollo de aplicaciones web, sistemas de gestión y optimización de procesos para empresas y organismos.",
