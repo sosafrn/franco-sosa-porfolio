@@ -16,6 +16,7 @@ export default function FooterSection() {
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const directEmail = "francososa.dev@gmail.com";
+  const cvPath = `${process.env.NODE_ENV === "production" ? "/franco-sosa-porfolio" : ""}/cv-franco-sosa.pdf`;
 
   const handleCopyEmail = async () => {
     try {
@@ -376,7 +377,7 @@ export default function FooterSection() {
                 </a>
 
                 <a
-                  href="/cv-franco-sosa.pdf"
+                  href={cvPath}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3.5 border border-border bg-surface/40 flex items-center justify-between font-mono text-xs text-foreground hover:border-[#3D7BFF] hover:text-[#3D7BFF] transition-colors group"

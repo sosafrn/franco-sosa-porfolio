@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import ScrambleText from "./ScrambleText";
 
 export default function ProfileSection() {
+  const cvPath = `${process.env.NODE_ENV === "production" ? "/franco-sosa-porfolio" : ""}/cv-franco-sosa.pdf`;
   const engineeringPrinciples = [
     {
       number: "01",
@@ -52,7 +53,7 @@ export default function ProfileSection() {
 
           <div className="mt-12 pt-6 border-t border-border-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <a
-              href="/cv-franco-sosa.pdf"
+              href={cvPath}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Descargar Curriculum Vitae en formato PDF"
