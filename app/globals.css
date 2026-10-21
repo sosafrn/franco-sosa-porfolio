@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+@theme {
+  --color-background: #0A0C10;
+  --color-surface: #10131A;
+  --color-surface-hover: #181D26;
+  --color-border: rgb(255 255 255 / 0.10);
+  --color-border-subtle: rgb(255 255 255 / 0.05);
+  --color-accent: #3D7BFF;
+  --color-accent-soft: #6FA0FF;
+  --color-accent-dim: rgba(61, 123, 255, 0.15);
+  --color-foreground: #E8ECF4;
+  --color-muted: rgba(232, 236, 244, 0.55);
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
+  --letter-spacing-tight-title: -0.02em;
+  --letter-spacing-wide-mono: 0.2em;
+  --letter-spacing-ultra-mono: 0.25em;
+}
+
+:root {
+  --background: #0A0C10;
+  --foreground: #E8ECF4;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Indicador de foco accesible WCAG AA */
+:focus-visible {
+  outline: 2px solid #3D7BFF;
+  outline-offset: 2px;
+}
+
+/* Respeto estricto a preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::selection {
+  background-color: #3D7BFF;
+  color: #0A0C10;
+}
+
+/* Scrollbar técnica minimalista */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0C10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Ocultar botones e indicadores flotantes de desarrollo */
+nextjs-portal,
+[data-nextjs-toast],
+[data-nextjs-dev-overlay] {
+  display: none !important;
+}
+
+/* Animación de Ticker Marquee para Telemetría a 60fps */
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 38s linear infinite;
+}
+
+/* Trazador de Paquetes de Datos para el Diagrama de Arquitectura */
+@keyframes tracer {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(700%, 0, 0);
+  }
+}
+
+.animate-tracer {
+  animation: tracer 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
